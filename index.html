@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="clean-styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <!-- GSAP for advanced animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Three.js for 3D effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Lottie for advanced animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -42,6 +52,8 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <!-- Particles Background -->
+        <div id="particles-js"></div>
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-text animate-fade-left">
@@ -73,7 +85,7 @@
                     <p>I'm a dedicated B.E. student in Artificial Intelligence and Data Science at Global Academy of Technology, Bengaluru (2022-2026). My passion lies in exploring the frontiers of AI, machine learning, and data science to create meaningful solutions.</p>
                     
                     <div class="skills-grid">
-                        <div class="skill-category">
+                        <div class="skill-category animate-slide-up">
                             <h3><i class="fas fa-code"></i> Programming Languages</h3>
                             <div class="skill-tags">
                                 <span class="tag">Python</span>
@@ -83,7 +95,7 @@
                             </div>
                         </div>
                         
-                        <div class="skill-category">
+                        <div class="skill-category animate-slide-up" style="animation-delay: 0.2s;">
                             <h3><i class="fas fa-database"></i> Databases</h3>
                             <div class="skill-tags">
                                 <span class="tag">MySQL</span>
@@ -92,7 +104,7 @@
                             </div>
                         </div>
                         
-                        <div class="skill-category">
+                        <div class="skill-category animate-slide-up" style="animation-delay: 0.4s;">
                             <h3><i class="fas fa-brain"></i> Machine Learning</h3>
                             <div class="skill-tags">
                                 <span class="tag">RandomForest</span>
@@ -103,7 +115,7 @@
                             </div>
                         </div>
                         
-                        <div class="skill-category">
+                        <div class="skill-category animate-slide-up" style="animation-delay: 0.6s;">
                             <h3><i class="fas fa-robot"></i> Deep Learning</h3>
                             <div class="skill-tags">
                                 <span class="tag">YOLO</span>
@@ -237,7 +249,7 @@
                             <i class="fas fa-trophy"></i>
                             <div>
                                 <h4>Army Day Celebration Medal</h4>
-                                <p>Awarded medal by GC for emceeing at Karnataka and Kerala Sub Area - Army Day Celebration 2025.</p>
+                                <p>Awarded medal for emceeing at Karnataka and Kerala Sub Area - Army Day Celebration 2025.</p>
                             </div>
                         </div>
                     </div>
@@ -348,44 +360,78 @@
                     </div>
                     
                     <div class="social-links">
-                        <h4>Follow Me</h4>
+                        <h4>Connect With Me</h4>
                         <div class="social-icons">
-                            <a href="https://linkedin.com/in/harshith-b-n-78b2692a5" target="_blank" class="social-icon linkedin">
+                            <a href="https://linkedin.com/in/harshith-b-n-78b2692a5" target="_blank" class="social-icon linkedin" title="LinkedIn - Professional Network">
                                 <i class="fab fa-linkedin-in"></i>
+                                <span>LinkedIn</span>
                             </a>
-                            <a href="https://www.youtube.com/@harshithbngowda" target="_blank" class="social-icon youtube">
+                            <a href="https://www.youtube.com/@harshithbngowda" target="_blank" class="social-icon youtube" title="YouTube - Music & Content">
                                 <i class="fab fa-youtube"></i>
+                                <span>YouTube</span>
                             </a>
-                            <a href="https://instagram.com/harshithbngowda" target="_blank" class="social-icon instagram">
+                            <a href="https://instagram.com/harshithbngowda" target="_blank" class="social-icon instagram" title="Instagram - Life & Updates">
                                 <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
                             </a>
-                            <a href="mailto:hbngowda@gmail.com" class="social-icon email">
+                            <a href="mailto:hbngowda@gmail.com" class="social-icon email" title="Email - Direct Contact">
                                 <i class="fas fa-envelope"></i>
+                                <span>Email</span>
                             </a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="contact-form">
-                    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success.html">
+                    <div class="form-header">
+                        <h3 class="form-title">Send Me a Message</h3>
+                        <p class="form-subtitle">Let's create something amazing together!</p>
+                    </div>
+                    
+                    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success.html" class="animated-form">
                         <input type="hidden" name="form-name" value="contact">
                         <div style="display: none;">
                             <input name="bot-field">
                         </div>
                         
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Name" required>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Your Name" required>
+                                <div class="form-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Your Email" required>
+                                <div class="form-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="Your Email" required>
-                        </div>
+                        
                         <div class="form-group">
                             <input type="text" name="subject" placeholder="Subject" required>
+                            <div class="form-icon">
+                                <i class="fas fa-tag"></i>
+                            </div>
                         </div>
+                        
                         <div class="form-group">
                             <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                            <div class="form-icon">
+                                <i class="fas fa-comment"></i>
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-primary btn-3d">
+                                <span class="btn-text">Send Message</span>
+                                <span class="btn-icon">
+                                    <i class="fas fa-paper-plane"></i>
+                                </span>
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -403,6 +449,110 @@
     </footer>
 
     <script>
+        // Initialize Particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: '#2563eb'
+                },
+                shape: {
+                    type: 'circle',
+                    stroke: {
+                        width: 0,
+                        color: '#000000'
+                    }
+                },
+                opacity: {
+                    value: 0.5,
+                    random: false,
+                    anim: {
+                        enable: false,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 40,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#2563eb',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'repulse'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 400,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    bubble: {
+                        distance: 400,
+                        size: 40,
+                        duration: 2,
+                        opacity: 8,
+                        speed: 3
+                    },
+                    repulse: {
+                        distance: 200,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    },
+                    remove: {
+                        particles_nb: 2
+                    }
+                }
+            },
+            retina_detect: true
+        });
+
         // Mobile Navigation Toggle
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
@@ -434,25 +584,419 @@
             });
         });
 
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        // Initialize GSAP ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+        // Create 3D Background for Contact Form
+        function init3DBackground() {
+            const container = document.getElementById('form-3d-bg');
+            if (!container) return;
+
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, container.offsetWidth / container.offsetHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true });
+            
+            renderer.setSize(container.offsetWidth, container.offsetHeight);
+            renderer.setClearColor(0x000000, 0);
+            container.appendChild(renderer.domElement);
+
+            // Create floating particles
+            const geometry = new THREE.SphereGeometry(0.5, 8, 8);
+            const material = new THREE.MeshBasicMaterial({ 
+                color: 0x2563eb, 
+                transparent: true, 
+                opacity: 0.6 
+            });
+
+            const particles = [];
+            for (let i = 0; i < 50; i++) {
+                const particle = new THREE.Mesh(geometry, material);
+                particle.position.set(
+                    (Math.random() - 0.5) * 20,
+                    (Math.random() - 0.5) * 20,
+                    (Math.random() - 0.5) * 20
+                );
+                scene.add(particle);
+                particles.push(particle);
+            }
+
+            camera.position.z = 15;
+
+            function animate() {
+                requestAnimationFrame(animate);
+                
+                particles.forEach((particle, i) => {
+                    particle.rotation.x += 0.01;
+                    particle.rotation.y += 0.01;
+                    particle.position.y += Math.sin(Date.now() * 0.001 + i) * 0.01;
+                });
+
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            // Handle resize
+            window.addEventListener('resize', () => {
+                camera.aspect = container.offsetWidth / container.offsetHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(container.offsetWidth, container.offsetHeight);
+            });
+        }
+
+        // Amazing Anime.js + GSAP Animations
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize 3D background
+            init3DBackground();
+            // Animate navigation on load
+            anime({
+                targets: '.nav-logo h2',
+                opacity: [0, 1],
+                translateY: [-30, 0],
+                duration: 1000,
+                easing: 'easeOutExpo'
+            });
+
+            anime({
+                targets: '.nav-item',
+                opacity: [0, 1],
+                translateY: [-20, 0],
+                duration: 800,
+                delay: anime.stagger(100, {start: 500}),
+                easing: 'easeOutExpo'
+            });
+
+            // Next-Level Skill Animations with GSAP
+            gsap.set('.skill-category', { y: 100, opacity: 0, scale: 0.8 });
+            gsap.set('.tag', { scale: 0, rotation: 180 });
+
+            ScrollTrigger.create({
+                trigger: '.skills-grid',
+                start: 'top 80%',
+                onEnter: () => {
+                    // Animate skill categories
+                    gsap.to('.skill-category', {
+                        y: 0,
+                        opacity: 1,
+                        scale: 1,
+                        duration: 1,
+                        stagger: 0.2,
+                        ease: 'back.out(1.7)'
+                    });
+
+                    // Animate tags with delay
+                    gsap.to('.tag', {
+                        scale: 1,
+                        rotation: 0,
+                        duration: 0.8,
+                        stagger: 0.05,
+                        delay: 0.5,
+                        ease: 'elastic.out(1, 0.5)'
+                    });
                 }
             });
-        }, observerOptions);
 
-        // Observe all fade-in elements
-        document.addEventListener('DOMContentLoaded', () => {
+            // Enhanced tag hover animations
+            document.querySelectorAll('.tag').forEach(tag => {
+                tag.addEventListener('mouseenter', () => {
+                    gsap.to(tag, {
+                        scale: 1.1,
+                        y: -5,
+                        duration: 0.3,
+                        ease: 'back.out(1.7)'
+                    });
+                });
+
+                tag.addEventListener('mouseleave', () => {
+                    gsap.to(tag, {
+                        scale: 1,
+                        y: 0,
+                        duration: 0.3,
+                        ease: 'power2.out'
+                    });
+                });
+            });
+
+            // Animate project cards
+            const projectObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        anime({
+                            targets: entry.target,
+                            scale: [0.8, 1],
+                            opacity: [0, 1],
+                            duration: 800,
+                            easing: 'easeOutBack'
+                        });
+                    }
+                });
+            });
+
+            document.querySelectorAll('.project-card').forEach(el => {
+                projectObserver.observe(el);
+            });
+
+            // Animate achievement cards
+            const achievementObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        anime({
+                            targets: entry.target,
+                            translateX: [-100, 0],
+                            opacity: [0, 1],
+                            duration: 1000,
+                            easing: 'easeOutExpo'
+                        });
+                    }
+                });
+            });
+
+            document.querySelectorAll('.achievement-category').forEach(el => {
+                achievementObserver.observe(el);
+            });
+
+            // Animate certification items
+            const certObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const certItems = entry.target.querySelectorAll('.cert-item');
+                        anime({
+                            targets: certItems,
+                            scale: [0, 1],
+                            rotateY: [90, 0],
+                            opacity: [0, 1],
+                            duration: 800,
+                            delay: anime.stagger(150),
+                            easing: 'easeOutBack'
+                        });
+                    }
+                });
+            });
+
+            document.querySelectorAll('.cert-grid').forEach(el => {
+                certObserver.observe(el);
+            });
+
+            // Advanced GSAP Contact Form Animations
+            gsap.set('.form-group', { y: 50, opacity: 0 });
+            gsap.set('.form-title', { y: -30, opacity: 0 });
+            gsap.set('.form-subtitle', { y: -20, opacity: 0 });
+            gsap.set('.btn-3d', { scale: 0, rotation: 180 });
+
+            ScrollTrigger.create({
+                trigger: '.contact-form',
+                start: 'top 80%',
+                onEnter: () => {
+                    // Animate form header
+                    gsap.to('.form-title', {
+                        y: 0,
+                        opacity: 1,
+                        duration: 1,
+                        ease: 'back.out(1.7)'
+                    });
+                    
+                    gsap.to('.form-subtitle', {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.8,
+                        delay: 0.2,
+                        ease: 'power2.out'
+                    });
+
+                    // Animate form fields with stagger
+                    gsap.to('.form-group', {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.8,
+                        stagger: 0.1,
+                        delay: 0.4,
+                        ease: 'back.out(1.7)'
+                    });
+
+                    // Animate submit button
+                    gsap.to('.btn-3d', {
+                        scale: 1,
+                        rotation: 0,
+                        duration: 1,
+                        delay: 0.8,
+                        ease: 'elastic.out(1, 0.5)'
+                    });
+                }
+            });
+
+            // Contact Section Animations
+            gsap.set('.social-icon', { scale: 0, rotation: 180 });
+            gsap.set('.contact-item', { x: -50, opacity: 0 });
+
+            ScrollTrigger.create({
+                trigger: '.contact-info',
+                start: 'top 80%',
+                onEnter: () => {
+                    // Animate contact items
+                    gsap.to('.contact-item', {
+                        x: 0,
+                        opacity: 1,
+                        duration: 0.8,
+                        stagger: 0.1,
+                        ease: 'back.out(1.7)'
+                    });
+
+                    // Animate social icons
+                    gsap.to('.social-icon', {
+                        scale: 1,
+                        rotation: 0,
+                        duration: 0.8,
+                        stagger: 0.1,
+                        delay: 0.3,
+                        ease: 'back.out(1.7)'
+                    });
+                }
+            });
+
+            // Enhanced form interactions
+            document.querySelectorAll('.form-group input, .form-group textarea').forEach(input => {
+                input.addEventListener('focus', () => {
+                    gsap.to(input, {
+                        scale: 1.02,
+                        duration: 0.3,
+                        ease: 'power2.out'
+                    });
+                    
+                    // Particle burst effect
+                    createParticleBurst(input);
+                });
+
+                input.addEventListener('blur', () => {
+                    gsap.to(input, {
+                        scale: 1,
+                        duration: 0.3,
+                        ease: 'power2.out'
+                    });
+                });
+            });
+
+            // Enhanced social icon hover effects
+            document.querySelectorAll('.social-icon').forEach(icon => {
+                icon.addEventListener('mouseenter', () => {
+                    gsap.to(icon, {
+                        scale: 1.05,
+                        y: -3,
+                        duration: 0.3,
+                        ease: 'back.out(1.7)'
+                    });
+                });
+
+                icon.addEventListener('mouseleave', () => {
+                    gsap.to(icon, {
+                        scale: 1,
+                        y: 0,
+                        duration: 0.3,
+                        ease: 'power2.out'
+                    });
+                });
+            });
+
+            // Particle burst effect for form interactions
+            function createParticleBurst(element) {
+                const rect = element.getBoundingClientRect();
+                const particles = [];
+                
+                for (let i = 0; i < 12; i++) {
+                    const particle = document.createElement('div');
+                    particle.style.cssText = `
+                        position: fixed;
+                        width: 4px;
+                        height: 4px;
+                        background: #2563eb;
+                        border-radius: 50%;
+                        pointer-events: none;
+                        z-index: 9999;
+                    `;
+                    
+                    particle.style.left = rect.left + rect.width / 2 + 'px';
+                    particle.style.top = rect.top + rect.height / 2 + 'px';
+                    
+                    document.body.appendChild(particle);
+                    particles.push(particle);
+                    
+                    const angle = (i / 12) * Math.PI * 2;
+                    const distance = 50 + Math.random() * 30;
+                    
+                    gsap.to(particle, {
+                        x: Math.cos(angle) * distance,
+                        y: Math.sin(angle) * distance,
+                        opacity: 0,
+                        scale: 0,
+                        duration: 0.8,
+                        ease: 'power2.out',
+                        onComplete: () => {
+                            document.body.removeChild(particle);
+                        }
+                    });
+                }
+            }
+
+            // Add hover animations to buttons
+            document.querySelectorAll('.btn').forEach(btn => {
+                btn.addEventListener('mouseenter', () => {
+                    anime({
+                        targets: btn,
+                        scale: 1.05,
+                        duration: 300,
+                        easing: 'easeOutQuad'
+                    });
+                });
+
+                btn.addEventListener('mouseleave', () => {
+                    anime({
+                        targets: btn,
+                        scale: 1,
+                        duration: 300,
+                        easing: 'easeOutQuad'
+                    });
+                });
+            });
+
+            // Scroll animations for fade-in elements
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
             document.querySelectorAll('.fade-in').forEach(el => {
                 observer.observe(el);
             });
+        });
+
+        // Add dynamic cursor effect
+        document.addEventListener('mousemove', (e) => {
+            let cursorElement = document.querySelector('.cursor');
+            if (!cursorElement) {
+                const newCursor = document.createElement('div');
+                newCursor.className = 'cursor';
+                newCursor.style.cssText = `
+                    position: fixed;
+                    width: 20px;
+                    height: 20px;
+                    background: rgba(37, 99, 235, 0.3);
+                    border-radius: 50%;
+                    pointer-events: none;
+                    z-index: 9999;
+                    transition: transform 0.1s ease;
+                `;
+                document.body.appendChild(newCursor);
+                cursorElement = newCursor;
+            }
+            
+            cursorElement.style.left = e.clientX - 10 + 'px';
+            cursorElement.style.top = e.clientY - 10 + 'px';
         });
     </script>
 </body>
